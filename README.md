@@ -1,2 +1,226 @@
 # ai-research-dev
 CDS lecture notes, notebooks and assignments
+
+# __Machine Learning__ ___(Beginners)___
+
+### __Types of Machine Learning__
+
+    - Supervised Machine learning
+    - Unsupervised Machine Learning
+    - Semi-supervised machine learning
+    - Reinforcement Learning
+        
+### __Supervised Machine Learning__
+
+1. Linear Regression
+    - works on continuous data
+    - uses predictors to predict the target value
+    - oldest simplest and widely used ML algorithms
+    - Regression line minimizes the {Sum of "Square of Residuals"} or "SSR"
+    - Regression line is there fore also know as "Line of Best Fit"
+    - a.k.a Ordinary Least Square (OLS)
+    - __Types:__
+        1. _Simple Linear Regression_
+            - Linear Regression line equation Y=B0 + B1*X
+        2. _Multiple Linear Regression_
+            - Linear Regression line equation Y=B0 + B1*X1 + B2*X2 + B3*X3 + ....
+    - __Properties:__
+        1. _Linearity:_ There should be a linear relationship between dependent and independent variable
+        2. _Multivariate normality:_ Linear regression analysis requires all variables to be multivariate normal. Residuals should be normal.
+        3. _No or little collinearity:_ Linear regression assumes that there is little or no multicollinearity in the data. MultiCollinearity occurs when the independent variables are too highly correlated with each other. For example. In a data set of housing prices when you have sqft there is no need for length and width as other variables so it is usually ignored to avoid collinearity.
+        
+    - __Pros:__
+        1. Linear regression is extremely simple method.
+        2. It is easy and intuitive to understand.
+        3. Widely used as many problems can be transformed into linear regression problems(e.g Polynomial regression. generalized Linear Model (GLM))
+        
+    - __Cons:__
+        1. It assumes there is a linear relationship b/w predictor and target
+        2. If data is intrinsically non-linear than it will not yield best results
+        3. Sensitive to the anomalies in data
+        4. Number of samples should be significantly more than the number of parameters other noise enters the model rather than relationship between variables
+        
+2. Logistic Regression
+    - works on structured, labelled, data
+    - used for classification
+    - Works only on binary classification i.e. cannot classify more than 2 categories of target
+    - Sigmoid curve is one of the example used in logistic regression
+    - Logistic regression can make use of large number of features that include continuous and discrete variables and non-linear features
+    - The dependant variable must be a binary variable
+    - __Function:__
+        1. 1/x+e^(-(ax+b))
+        2. For multiple linear regression 1/x+e^(-(a0x0+a1x1+a2x2+b))
+    - __Assumptions:__
+        1. Binary logistic regression requires dependant variable must be binary
+        2. For a binary regression the factor level 1 of the dependent variable should represent the desired outcome
+        3. Only meaningful variables should be included
+        4. The independent variable should be independent of each other i.e. little to no multicollinearity 
+        5. Requires quite a large sample       
+    - __Pros:__
+        1. Powerful in deciding two classes
+        2. More Robust i.e. independent variables does not have to be normally distributed
+        3. It does not assume a linear relationship between the independent and dependent variables
+        4. There is no homogeneity of variance assumed        
+    - __Cons:__
+        1. Limited outcome classification: Only does binary classification
+        2. if wrong independent variables are supplied then the it will have little or no predictive value
+        3. Models are vulnerable to overfitting / over confidence
+    - __Applications:__
+        1. Image Segmentation or Categorization
+        2. Handwriting recognition
+        3. Spam filtering - spam or not
+        4. Cell image - cancer or not
+        5. Production line part scan - good or defective
+        
+3. K-Nearest Neighbours
+
+    - It works on structured labelled data
+    - KNN is widely disposable in real-life scenarios since it is non-parametric
+    - This means it does not make any underlying assumption about the distribution of data
+    - data is classified based on its nearest neighbours
+    - KNN works based on minimum distance from the query instance to the training samples to determine the K-Nearest-Neighbours
+    - K = the number of nearest neighbours to check for our target
+    - the higher the number of nearest neighbours out of the respective classes the target is classified of that class
+    - for the larger data it is slow as the ALGO checks for distance of target with each and every class points 
+    - its time complexity is O(n)
+    - if there is a tie between two or more classes for a given K then we select the nearest class as our class for the target
+    - The above points makes the computation cost very high
+    - Needs to store all the data
+    - must know we have have a meaningful distance function (rarely required)
+    
+    - __Application:__
+        1. Concept search: searching for semantically similar documents(i.e. documents containing similar topics)
+        2. Recommender systems: If a customer likes a particular item, then you can recommend similar items for them. Also in Ads display
+        3. Facial recognition, Finger print detection
+        
+    - __Pros:__
+        1. no assumption about distribution of data required
+        
+    
+    - __Cons:__
+        1. Computationally expensive
+        2. The time complexity is O(n)
+
+3. Decision Tree
+    - it is a supervised ML algorithm considered to be one of the best and most widely used for classification problem
+    - Decision tree works for both categorical and continuous input and output variable
+    - Decision tree based methods empower predictive models with high accuracy, stability, and ease of interpretation
+    - Types of Decision tree:
+        1. __categorical Variable Decision tree:
+            - Target variable is categorical
+            - eg. is it gonna rain or not etc
+        2. __Continuous Variable Decision tree:
+            - Target variable is continuous
+            - eg. BMI of a person
+            - moderately ok for this particular purpose
+            
+    - __Decision Tree terminology:__
+        1. __Root Node:__ it represents the entire population or sample and this further gets divided into two or more homogeneous set
+        2. __Splitting:__ It is a process of dividing a node into two or more sub-nodes
+        3. __Decision Node:__ When a sub-node splits into further sub-nodes, then it is called decision node
+        4. __Leaf/Terminal Node:__ Nodes with no children is called leaf or terminal node
+        5. __Pruning:__ When we reduce the size of decision trees by removing nodes (opposite of splitting) its called pruning
+        6. __Branch / sub-tree:__ A sub section of decision tree is called a branch or sub-tree
+        7. __Parent and child Node:__ A node, which is divided into sub-nodes is called parent node of sub-nodes and sub-nodes are called child of parent node
+        
+     - __Working:__
+         - Decision tree builds classification or regression models in the form of a tree structure. It breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with decision nodes and leaf nodes
+         - To find the root node we calculate something called a gini factor
+         - gini-factor of a child node = 1- P(A)^2 - P(B)^2 - .... - A, B, .... being the events that can happen in a node
+         - gini factor of parent = weighted avg of gini-factor of all children
+         
+     - __Pros:__
+         - Easy to understand: The output is very easy to understand even for people from non analytical background
+         - Less data cleaning required: It is not influenced by outliers or missing values to a fair degree
+         - Non parametric method: It means it has no prior assumptions about space distribution or classifier structure
+         - Data type is not a constraint: It can handle both numerical as well as categorical variables
+         - Decision Tree Versatility: It can be customized for variety of situations
+     
+     - __Cons:__
+         - Overfitting: Over fitting is one of the most practical difficulty for this model
+         - Low accuracy for continuous variables: While working with continuous numerical variables it looses information when it categorizes variables into different categories
+         - Unstable: A small change in the data can lead to a large change in the structure of the optimal decision tree. This is self-evident as it relies on gini-factor which is sensitive to change
+     
+     - __Application:__
+         - Business decision support: Building tree with past business data to support decision making for new product launches, features, analyzing customer satisfaction factors etc.
+         - Fraudulent Statement Detection: It can make a significant contribution for the detection of FFS due to a higly accurate rate
+         - Healthcare Management: It is useful tool to discover and explore hidden information in health-care management, diagnose health condition
+         - Pharamcology: For use in drug analysis
+         - Agriculture: Application of a range of ML methods to problems in agriculture and horticulture
+         
+     - __Optimization:__
+         1. Overfitting problem: A tree that is too large risks overfitting the training data and poorly generalizing to new samples
+         2. Pruning:
+             - A common strategy is to grow the tree until each node contains a small number of instances then use pruning to remove nodes that do not provide additional information
+             - Pruning should reduce the size of a learning tree without reducing predictive accurayc as measured by cross-validation set
+         3. Setting constraints on Tree size: Imposing contraints such as maximum depth of tree, Minimum samples for a node split etc are commonly used techniques
+         
+
+4. Random Forest
+    - Resolves overfitting in decision trees
+    - It is a supervised ML algorithm that works on structured labelled data
+    - It can be used for classification and regression but it may lag behind in regression. best used for classification
+    - It is a type of ensemble models because it is not a single algo, it is an implementation of multiple Decision trees
+    - It operates by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes
+    - Random forest corrects for decision tree's habit of overfitting to their training set
+    - It does this by creating random subsets of the features and building smaller shallower trees using the subsets and then ti combines the subtress
+    
+    - __Pros:__
+        1. Solves the overfitting problem generally observed with decision trees
+        2. Random Forest can be used for both classification and regression
+        3. RF are extremely flexible and have a very high accuracy
+        4. RF default hyper-parameters often produce a good prediction result, so considered easy/handy algorithm
+        5. RF maintains accuracy even when a large proportion of data are missing
+        
+    - __Cons:__
+        1. RF is complex, harder, time-consuming to construct than decision trees
+        2. Large number of trees can make the algorithm to slow down and ineffective for real-time predictions
+        3. No interpretability. Random Forest model is not interpretable as Decision tree
+        
+    - __Application:__
+        1. Banking: Customer segmentation - loyal or fraud customers
+        2. Health care: Identifying the treatment/medicine based on history and symptoms
+        3. E-Commerce: Recommended products and customer experience
+        4. Stock Market: Predicting stock market portfolio performance
+
+### __Unsupervised Machine Learning__
+
+1. K-means Clustering
+
+    - K number of centroids are selected from the messy data at ramdom
+    - data is classified into k clusters based on each data point's euclidean distance with centroids
+    - Now another K number of centroids are selected from data with each centroid being center most point of the previously created k cluster
+    - data is classified into another set of k clusters based on each data point's euclidean distance with centroids
+    - at the end it returns K clusters that it found after iteratively centering the centroids to found clusters
+    - The algorihm works iteratively to assign each data point to one of K groups based on the features that are provided
+    - Data points are clustered based on their feature similarity
+    - __Steps of K means Clustering__
+        1. Clusters the data into k groups where k is predefined
+        2. select k points at random as cluster centers
+        3. Assign objects to the closest cluster center according to the euclidean distance function
+        4. Calculate the centroid or mean of all objects in each cluster
+        5. repeat steps 2,3,4 until the same points are assigned to each cluster in consecutive rounds
+        6. The repeatation happens until the centroids do not move any further
+        
+    - __Pros:__
+        1. Practically works well even if some assumptions are broken
+        2. Simple and easy to implement
+        3. Fast and efficient in implementation
+        
+    - __Cons:__
+        1. __Uniform Effect:__ Often produces clusters with relatively uniform size even if the input data have different cluster size
+        2. __Different densities:__ May work poorly with the clusters with different densities but spherical shape
+        3. Highly Sensitive to outliers
+        4. K value needs to be known before K-means clustering
+        
+    - __Applications:__
+        1. Market segmentation
+        2. Computer Vision
+        3. Geostatistics
+        4. Astronomy and Agriculture
+        5. Feature Learning
+        
+
+### Neural Networks
+
+   - w 
