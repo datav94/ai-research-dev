@@ -1,0 +1,5 @@
+Assignment
+
+1. Use KNN on iris dataset
+2. research on gini and information gain
+3. Use Decision tree on breast cancer dataset
