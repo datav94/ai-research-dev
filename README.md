@@ -222,5 +222,66 @@ CDS lecture notes, notebooks and assignments
         
 
 ### Neural Networks
+   #### Math required to understand deep learning
+    1. Linear algebra (Upto Eigen values and Eigen vectors and vector algebra)
+    2. Statistics and probability (all concepts in NPTEL statistics and probability for deep understanding)
+    3. Calculus (ODE, Partial differential equations, Transforms etc)
 
-   - w 
+    - Geofrey Hilton is the godfather of deep learning - person who came up with back propagation
+    - One way to create neural network is to randomly initialize the weights and bias of your inputs for first layer of neurons
+    - We have an error or a cost function to calculate the error 
+    - We use gradient descent to reduce the error shown by error function
+    - We chose the global minima values of our weights and bias as our weights and bias for our neural network layer
+    - Shallow and deep neural networks
+    - Feed Forward propagation and back propagation are used to evaluate how bad or good model performs and weights and bias are optimized to reach the least error possible using these two methods
+    - Activation function is used to generate inputs out of the z for next neural layer
+    - Sigmoid function, ReLU etc are used as activation function
+    
+1. Artificial Neural Network
+    - A supervised ML algorithm
+    - Input layer - It contains those units which receive input from the outside world on which network will learn, recognize about or otherwise process
+    - Output layer - It contains units that respond to the information about how its learned any task
+    - Hidden layers - These units are in between input and output layers. The job of hidden layer is to transform the input into something that output unit can use in some way
+    - Most neural networks are fully connected that is to say each hidden neuron is fully connected to every neuron in its previous layer and to the next layer
+    - Stopping criteria
+        1. Max iteration (no of times back propogation can be applied)
+        2. validation score not improving 
+        3. Errors below threshold (if error value is below our threshold value i.e. f(x) >= f(c) for every x in D(domain) f(c) is the global minima)
+    - Threshold is usually set manually but it depends on which loss function or cost function we are using
+    - sigmoid function -> sigma(z) = 1/(1+e^(-1))
+    - ReLU function (Rectified Linear Unit) -> R(z) = max(0, z) if output < 0 its taken as 0 else it is taken as z
+    - ReLU can be analogus to half wave rectification and it is also known as ramp function
+    - Activation function
+        1. Classification
+            - softmax (multiclass classification)
+            - Sigmoid
+        2. Regression
+            - Linear
+    - ANN architectures
+        1. Single layer perceptron
+        2. Radial Basis Network(RBN)
+        3. Multilayer Perceptron
+        4. Recurrent Neural Network
+        5. LSTM(Long Short Term Memory) Recurrent Neural Network
+        6. Hopfield Network
+        7. Boltzmann Machine
+    - __Pros:__
+        1. Good to model the non-linear data with large number of input features
+        2. Widely used for high dimensionality data
+        3. ANN can generalize - After learning from the initial inputs and their relationships
+        4. ANN does not impose any restrictions on input variables(like how they should be distributed)
+        
+    - __Cons:__
+        1. NNs are useable only for numerical inputs, vectors with constant number of values and datasets with non missing data
+        2. ANNs are computationally expensive
+        3. Black box, difficult to understand the modeling
+        4. Multi-layer neural networks are usually hard to train
+        5. Requires significant training data for model ANN compared to other ML algorithms
+        
+    - __Application:__
+        1. Image Processing and Character recognition: Given its ability to take in a lot of inputs, process them to infer hidden as well as complex, non linear relationships, ANNs play a big role in image and character classification
+        2. Forecasting: Forecasting is required extensively in everyday business decisions(e.g sales, financial allocation between products, capacity utilization etc), in economic and monetary policy, in finance and stock market
+        3. Game playing and decision making: e.g Backgammon, chess, poker
+        4. Medical Diagnosis: e.g. Cancer detection 
+        5. To accelerate reliablity analysis of infrastructures subject to natural disasters
+    
