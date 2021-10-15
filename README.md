@@ -205,8 +205,25 @@ CDS lecture notes, notebooks and assignments
     - C value and Gamma value are most imp hyperparameters to watch for
     - if C is too small the model will over generalize and if C is too high the model will overfit
     
+    - __Pros:__
+        1. Very good at dealing with higher dimensional data
+        2. Works well with smaller datasets
+        3. It is useful for both linearly separable(hard margin) and non linearly separable(soft margin) data
+        4. Guaranteed Optimality: Due to the nature of Convex optimization, the solution is guaranteed to be the global minimum
 
-
+    - __Cons:__
+        1. Picking right kernel and parameters is computationally intensive
+        2. In NLP, structured representations of text yield better performances. Sadly, SVMs can not accomodate such structures(word embeddings)
+        
+    - __Applications:__
+        1. Face Detection
+        2. Text and hypertext detection
+        3. Classification of images
+        4. Bioinformatics
+        5. Protein fold and remote homology detection
+        6. Handwriting recognition
+        
+        
 ### __Unsupervised Machine Learning__
 
 1. K-means Clustering
