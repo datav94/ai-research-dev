@@ -71,7 +71,8 @@ CDS lecture notes, notebooks and assignments
         3. Spam filtering - spam or not
         4. Cell image - cancer or not
         5. Production line part scan - good or defective
-        
+    
+    
 3. K-Nearest Neighbours
 
     - It works on structured labelled data
@@ -100,6 +101,7 @@ CDS lecture notes, notebooks and assignments
     - __Cons:__
         1. Computationally expensive
         2. The time complexity is O(n)
+
 
 3. Decision Tree
     - it is a supervised ML algorithm considered to be one of the best and most widely used for classification problem
@@ -182,6 +184,28 @@ CDS lecture notes, notebooks and assignments
         2. Health care: Identifying the treatment/medicine based on history and symptoms
         3. E-Commerce: Recommended products and customer experience
         4. Stock Market: Predicting stock market portfolio performance
+        
+5. Support Vector Machine
+
+    - Requires structured labelled data
+    - It can be used for both classification as well as regression challanges. However, it is mostly used in classification problems
+    - An SVM model is a representation of the examples as point in space, mapped so that the examples of the separate categories are divided by a clear gap that is as wide as possible. New examples are then mapped into that same space and predicted to belong to a category based on which side of the gap they fall.
+    - We try to plot our data in such a way that gap is maximum enough to fit a hyper-plane into it.
+    - In addition to performing linear classification, SVMs can efficiently perform a non-linear classification using what is called the kernal trick, implicitly mapping their inputs into higher dimensional feature space.
+    - hyperplanes are planer formations inside the n dimensional feature space that separate the feature space into separte spaces
+    - For e.g. a line can be a separator into a 2 dim feature space
+    - kernal trick is mapping a data into our required scale for example a 1 dim feature space can be transformed into 2 dim space by sqaring the data points thereby us being able to draw a separator line between different clusters of data
+    - If the data is linearly separable we can directly apply  SVM
+    - If not then we use a kernal trick then use SVM
+    - It constructs a hyperplane or a set of hyperplane in a high or infinite dim space which can be used for classification, regression or other tasks like outlier detection
+    - Distance between hyperplane and datapoint is called margin
+    - The best hyperplane is chosen which has highest margin among the set of hyperplane
+    - This means when the points are separated by highest possible margin with hyperplane our model classifies clearly
+    - For e.g 2D plane will have line as hyperplane, 3D plane will have a plane and 4D and so on will have a hyper plane
+    - C value and Gamma value are most imp hyperparameters to watch for
+    - if C is too small the model will over generalize and if C is too high the model will overfit
+    
+
 
 ### __Unsupervised Machine Learning__
 
