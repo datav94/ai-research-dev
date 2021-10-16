@@ -272,7 +272,7 @@ CDS lecture notes, notebooks and assignments
         
 
 ### Neural Networks
-   #### Math required to understand deep learning
+#### Math required to understand deep learning
     1. Linear algebra (Upto Eigen values and Eigen vectors and vector algebra)
     2. Statistics and probability (all concepts in NPTEL statistics and probability for deep understanding)
     3. Calculus (ODE, Partial differential equations, Transforms etc)
