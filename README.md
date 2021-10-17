@@ -335,6 +335,24 @@ CDS lecture notes, notebooks and assignments
         4. Medical Diagnosis: e.g. Cancer detection 
         5. To accelerate reliablity analysis of infrastructures subject to natural disasters
         
+2. Convolution Neural Networks:
+    - Images are made up of grid of pixels
+    - Grayscale images
+        - Each pixel can have any value between 0 - 255 where 0 = black and 255 = white and rest all in between 0 and 255 are shades of grey
+    - Colored images
+        - In a colour image each pixel comprises of 3 values each ranging from 0-255 0-255 0-255 i.e R G B
+    - Covulution - usage of filters to detect different features of an image
+    - CNN detects what filters to use for what features automatically
+    - ReLU activation function is used for avoiding linearity in CNN so any negative value is mapped to 0
+    - Removing linearity requires understanding of deep convulution neural network
+    - Pooling - It is used to generalize the model
+    - Most popular method of pooling is called max-pooling
+    - It just takes the maximum value from the provided matrix so as to generalize any pixel matrix
+    - each iteration of conv-relu-max-pooling is called a pass_n where n -> (0, n)
+    - After all the above processes we flatten the image
+    - After flattenning we create an ANN to categories - here we send our images to be classified
+    - Rewatch the video for complete explaination in case you forget why convultuion -> Activation -> pooling -> repeat -> flatten -> Dense (ANN) -> activation -> Droput or training generators, testing generators, model.fit(test_batch_size, batch_size, epochs etc)
+        
         
 ### Hyperparameter tuning
 
@@ -346,3 +364,16 @@ CDS lecture notes, notebooks and assignments
     - faster
     - does not evaluate all parameters but instead chooses random ones for evaluation
     
+    
+### Natural Language Processing
+    
+    - Bag Of Words - old and not so popular method
+        - It converts a sentence into its numerical representation
+        - The flaw here is that all words are given same importance value
+    - TF-IDF (Term Frequency - Inverse Document Frequency)
+        - TF - how frequent is each word in each sentence in a list of sentences
+        - TF = No of occurance of a word in sentence / total number of words in sentence
+        - IDF = log(Total number of sentences / no. of sentences containing the word)
+        - TO calculate IDF first arrange all the words in order of their frequencies
+        - for each word take the product of its TF and IDF value
+        
