@@ -230,7 +230,44 @@ CDS lecture notes, notebooks and assignments
     - performs excellently in both classification and regression problems
     - XGBoost is an implementation of gradient boosted decision trees designed for speed and performance
     - XGBoost is a popular algorithm, widely adapted both in production and in machine learning competition winning models
-    - 
+
+7. Naive Bayes Classifier:
+
+    - __Steps:__
+    - Convert the dataset into a frequency table
+    - Create likelihood table by finding the probabilities
+    - Use Naive Bayesian Equation to calculate the posterior probability for each class. The class with the highest posterior probability is teh outcome of prediction
+    
+    - __Types of NB in Scikit-learn:__
+        1. Gaussian:
+            - It is used in classification and it assumes that features follow a normal distribution
+        2. Multinomial:
+            - It is used for discrete counts. For example, let's say, we have a text classification problem. Here we consider bernoulli trials which is one step further and instead of "word occuring in the document", we have  "count how often word occurs in document". one can think of it as "# of times outcome number x_i is observed over the n trials"
+        3. Bernoulli:
+            - The binomial model is useful if your feature vectors are binary. One applicaiton would be classification with "bag of words" model where 1s and 0s are "word occurs in documents" and "word does not occur in document" respectively.
+    
+    - __Pros:__
+        1. Naive Bayes is fast and highly scalable
+        2. Naive Bayes can be used for Binary and Multiclass Classification. It provides different types of Naive Byes Algorithms like GaussianNB, MultinominalNB, BernoulliNB
+        - It is a simple algorithm that depends on doing a bunch of counts
+        - Great choice for text classification Problems. Its a popular choice for spam email classification
+        - It can be easily trained on small dataset
+        - Naive bayes can handle missing data, as they are ignored when probability is calculated
+    
+    - __Cons:__
+        1. Ir considers all the features to be unrelated, so it cannot learn the relationship between features
+        2. E.g. Lets say Remo is going to a party. While closth selection for the party, Remo is looking at his cupboard. Remo likes to wear a white color shirt. In jeans, He likes to wear a brown jeans, But remo doesn't like wearing a white shirt with brown jeans.
+        3. Naive Bayes can learn individual features importance but can't determine the relationship among features
+    
+    - __Applications:__
+        1. Text classification/Spam Filtering/Sentiment Analysis:
+            - Naive Bayes classifier mostly used in text classification
+            - New article classificiation SPORTS, TECHNOLOGY etc
+            - Spam or Ham
+        2. Recommendation System:
+            - Naive bayes classifier and collaborative filtering togather builds a recommendation system that uses machine learing and data mining techniques to filter unseen information and predict whether a user would like a given resource or not
+        3. Real time prediction:
+            - Naive bayes is an eager learning classifier and it is sure fast. Thus, it could be used for making predictions in real time.
         
         
 ### __Unsupervised Machine Learning__
@@ -377,3 +414,11 @@ CDS lecture notes, notebooks and assignments
         - TO calculate IDF first arrange all the words in order of their frequencies
         - for each word take the product of its TF and IDF value
         
+       
+### Time Series Forecasting
+
+    - Data taken on regular time intervals is used and hence the name time series
+    - It is an observation of values that a variable takes at different times
+    - Examples: Sales trends, Stock market trends, Weather forecasts etc
+    - trends and seasonality can be related to monotonously increasing or decreasing fields or sigma-algebras etc
+    - 
