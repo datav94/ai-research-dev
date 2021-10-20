@@ -421,4 +421,42 @@ CDS lecture notes, notebooks and assignments
     - It is an observation of values that a variable takes at different times
     - Examples: Sales trends, Stock market trends, Weather forecasts etc
     - trends and seasonality can be related to monotonously increasing or decreasing fields or sigma-algebras etc
-    - 
+    - need to remove trend from the data to apply time series forecasting
+    - ARIMA is used for time series forecasting
+    - White noise - A series purely random in nature is called a white noise
+    - Mean = 0, constant variance and uncorrelated
+    - if dealing with white noise average forecasting is a better way to go
+    - AutoRegressive (AR) Model
+        1. yt depends only on past values like y(t-1), y(t-2) etc
+        2. y(t) = f(y(t-1), y(t-2), y(t-3), ......)
+        3. y(t) = B0 + B1y(t-1) + B2y(t-2) + ..... -> here B is beta
+        4. P = Number of past values to be used to generate our model
+        5. as the name suggests it tries to regress the data by itself based on its past values
+    - Moving Average (MA) Model
+        1. It uses the difference between past consecutive values to generate a model instead of directly taking past values as in AR model.
+        2. Thats the only diff b/w AR and MA model
+        3. D = no of values whose consecutive differences are to be considered
+        4. y(t) = f(e(t) + e(t-1) + e(t-2) + .......)
+        5. y(t) = B + e(t) + Theta(1)e(t-1) + Theta(2)e(t-2) + ...... -> e is the error b/w t and t-1th value
+    - ARMA model
+        1. its a combination of AR and MA model and hence the formulas also just add up 
+        2. y(t) = f(y(t-1), y(t-2), y(t-3), ......) + f(e(t) + e(t-1) + e(t-2) + .......)
+    - A series is said to strictly stationary if the mean variance and covariance is constant over period of time or time invariant
+    - A series which is not stationary can be made stationary after differencing
+    - After differencing once, series is called as integrated of order 1 and denoted by I(1). In general I(d)
+    - lag or q value is used to determine the lag to be performed
+    - I = Integrated difference
+    - most models assume stationary data. In other words, standard techniques are invalid if data is non-stationary
+    - Autocorrelation may result due to non-stationary data
+    - AutoRegression results in spurious regressions if data is non-stationary
+    - ARIMA - (AutoRegressive Integrated Moving Average)
+    - Auto Correlation is the similarity between observations as a function of time lag between them
+    - If autocorrelation depletes rapidly then the data seems stationary if it has gradual change then it may not be stationary
+    - Akaike Information Criteria (AIC)
+        1. The AIC is defined by a simple equation from the sum-of-squares and number of degrees of freedom of the two model
+        2. Delta(AIC) = N * ln(SS2/SS1) + 2Delta(DF)
+        3. Used to calculate what kind of score your time series model performance has
+        4. The lower the AIC the better is your model
+        
+        
+    
