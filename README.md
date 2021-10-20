@@ -307,9 +307,34 @@ CDS lecture notes, notebooks and assignments
         4. Astronomy and Agriculture
         5. Feature Learning
         
+2. Principal Component Analysis (PCA) -> Dimensionality reduciton
+    - it converts all of our features in to principal components
+    - it is irreversible
+    - Each PC contains the variance and the return value for all PC gives us the list of variance of each PC in desc order
+    - it is a technique used to emphasize variation and bring out strong patterns in a dataset. It's often used to make data easy to explore and visualize
+    - PCA reduces dimensionality by finding a new set of features called components, which are composites of the original features but are uncorrelated with each other
+    - PCA converts original features into new set of features
+    - The correlation b/w new features is zero
+    - The new feature (PC1) is a linear combination of old features PC1 = Sum(2j) = 1*wj*sum(j) = 12wj1*j -> j = features
+    - The first PC is chosen in such a wa that variance of its score is maximum. Second PC captures majority of remaining Variance and so on.
+    - A principal component is a normalized linear combination of the original predictors in a data set. Lets say PC1 and PC2 are pricipal components. Lets say we have set of predictors as X1, X2 .... Xp. The PC can be written as Z1 = CHI11X1 + CHI21X2 +  CHI31X3 + .... + CHIp1Xp
+    - Check image in PCA explantion video for the rest of explanation on the above
+    - __Pros:__
+        - PCA reduces the number of features to few PC without losing much information
+        - Most efficient dimensionality reduction technique works fairly good with categorical data as well
+    - __Cons:__
+        - Linearity: PCA assumes that the PC are a linear combination of original features. If this is not true PCA will not give very sensible results
+        - For e.g. lets say if one feature is a combination of other features provided then PCA does not work well 
+        - Large variance implies more structure: PCA uses variance as the measure of how important a particular dimensionn is. So, high variance axes are treated as PC, while low variance axes are treated as noise
+        - Orthogonality: PCA assumes that the PC are orthogonal
+    - __Applications:__
+        - It is used to reduce the dimension of data before applying more sophisticated data analysis methods such as non-linear classification algo or independent component analysis
+        - Multivariate Anomaly detection in healthcare
+        - Finance: Stock portfolio analysis
+        
 
 ### Neural Networks
-   #### Math required to understand deep learning
+#### Math required to understand deep learning
     1. Linear algebra (Upto Eigen values and Eigen vectors and vector algebra)
     2. Statistics and probability (all concepts in NPTEL statistics and probability for deep understanding)
     3. Calculus (ODE, Partial differential equations, Transforms etc)
@@ -458,5 +483,4 @@ CDS lecture notes, notebooks and assignments
         3. Used to calculate what kind of score your time series model performance has
         4. The lower the AIC the better is your model
         
-        
-    
+
