@@ -483,4 +483,24 @@ CDS lecture notes, notebooks and assignments
         3. Used to calculate what kind of score your time series model performance has
         4. The lower the AIC the better is your model
         
-
+### Feature Selection
+    - Elimination method (premitive and time consuming)
+        1. can be done using loc and iloc
+        2. trial and error to check accuracy after every feature removal to check which one to keep and which one to remove
+    - using correlation of our predictors with target (the ones with least correlation are removed)
+        1. Makes sense with continuous variables and continuos targets
+        2. Hard to perform on mixed data that includes both continuous and categorical data
+        
+### ROC
+    - Receiver Operating Charateristic curve
+    - It is always between True Positive Rate (TPR) and False Positive Rate (FPR)
+    - TPR = TP / (TP + FN) -> Sensitivity -> TP = True Positive and FN = False Negative
+    - FPR = FP / (FP + TN) -> (1 - specificity) -> FP = False Positive and TN = True Negative
+    - Specificity = TN / (TN + FP)
+    - TPR -> of all the results that I have how many of that are being deduced correctly
+    - FPR -> of all the results that I have how many of that are being deduced correctly
+    - For ROC curve -> X-axis = FPR and Y-axis = TPR
+    
+### AUC (Area Under Curve)
+    - ROC curve is always in value range of 0,1 for y axis which means the area at max will have 1 sq unit as AUC for model with 100% perfect predictions
+    
