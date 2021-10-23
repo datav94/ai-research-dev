@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Iris Flower Classification</title>
+  </head>
+  <body>
+	<nav class="navbar navbar-light bg-light" style="width:50%; margin: auto;">
+	  <a class="navbar-brand" href="#">
+		<!--img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""-->
+		<h1>Iris flower classification</h1>
+		<br>
+		<h5 style="width:50%; margin: auto;">Using Random Forest Classifier</h5>
+		<h6 style="width:50%; margin: auto;">Made by Viral Gorecha</h6>
+	  </a>
+	</nav>
+	<br>
+	
+	
+	<div id='formdiv' class="form-group" style="width:50%; margin: auto;">
+	<form method="GET" action="/">
+	  <div class="form-group" >
+		<label for="sepallengthcm">The Species of your sample is</label>
+		<h5 id="sepallengthcm">{{predict}}</h5>
+	  </div>
+	  <br>
+	  <br>
+	  
+	  
+	  <button type="submit" class="btn btn-primary" style="width:20%;">Back</button>
+	  
+	</form>
+	</div>
+  </body>
+</html>
